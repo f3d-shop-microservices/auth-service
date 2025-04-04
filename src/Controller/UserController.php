@@ -9,10 +9,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class UserController extends AbstractController
 {
-    #[Route('/api/register', name: 'api_register', methods: ['POST'])]
+    #[Route('/register', name: 'api_register', methods: ['POST'])]
     public function register(
         Request $request,
         UserPasswordHasherInterface $hasher,
@@ -33,5 +35,21 @@ class UserController extends AbstractController
         $em->flush();
 
         return new JsonResponse(['status' => 'User created'], 201);
+    }
+
+    #[Route('/api/validate-token', name: 'api_validate_token', methods: ['GET'])]
+    #[IsGranted('IS_AUTHENTICATED_FULLY')]
+    public function validateToken(): JsonResponse
+    {
+        /** @var UserInterface|null $user */
+        $user = $this->getUser();
+
+        return new JsonResponse([
+            'valid' => true,
+            'user' => [
+                'email' => $user->getUserIdentifier(),
+                'roles' => $user->getRoles(),
+            ]
+        ]);
     }
 }
