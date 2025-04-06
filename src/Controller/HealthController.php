@@ -37,7 +37,7 @@ final class HealthController extends AbstractController
         }
 
         $content = file_get_contents($cgroupFile);
-        if (preg_match('/docker[-/](?<id>[0-9a-f]{12,64})/', $content, $matches)) {
+        if (preg_match('/docker[-\/](?<id>[0-9a-f]{12,64})/', $content, $matches)) {
             return substr($matches['id'], 0, 12);
         }
 
