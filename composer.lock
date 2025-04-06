@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d64f8a4abf9a3f773a08dce853cd279e",
+    "content-hash": "6ad5abbc9e580300f342a8cf631b30c4",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1220,6 +1220,38 @@
                 "source": "https://github.com/doctrine/sql-formatter/tree/1.5.2"
             },
             "time": "2025-01-24T11:45:48+00:00"
+        },
+        {
+            "name": "f3d/shop-common",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/f3d-shop-microservices/shop-common.git",
+                "reference": "a7423f8a9a68dba41f47ae106b9282fde9ba50f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/f3d-shop-microservices/shop-common/zipball/a7423f8a9a68dba41f47ae106b9282fde9ba50f1",
+                "reference": "a7423f8a9a68dba41f47ae106b9282fde9ba50f1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1",
+                "symfony/framework-bundle": "^6.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shop\\Common\\": "src/"
+                }
+            },
+            "description": "Common tools for f3d shop microservices",
+            "support": {
+                "source": "https://github.com/f3d-shop-microservices/shop-common/tree/main",
+                "issues": "https://github.com/f3d-shop-microservices/shop-common/issues"
+            },
+            "time": "2025-04-06T18:55:16+00:00"
         },
         {
             "name": "lcobucci/clock",
@@ -5492,7 +5524,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "f3d/shop-common": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
