@@ -27,7 +27,8 @@
         "allow-plugins": {
             "php-http/discovery": true,
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "wikimedia/composer-merge-plugin": true
         },
         "sort-packages": true
     },
@@ -69,10 +70,19 @@
         "symfony": {
             "allow-contrib": false,
             "require": "6.4.*"
+        },
+        "merge-plugin": {
+            "include": [
+                "composer.local.json"
+            ],
+            "recurse": false,
+            "replace": false,
+            "merge-dev": true
         }
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^4.1",
-        "symfony/maker-bundle": "^1.62"
+        "symfony/maker-bundle": "^1.62",
+        "wikimedia/composer-merge-plugin": "^2.1"
     }
 }
