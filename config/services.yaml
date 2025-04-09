@@ -11,6 +11,16 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
+    Shop\Common\Contract\HealthProviderInterface: '@Shop\Common\Service\HealthStatusProvider'
+    Shop\Common\Service\HealthStatusProvider:
+        arguments:
+            $serviceId: '%env(SERVICE_ID)%'
+            $serviceHost: '%env(SERVICE_HOST)%'
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Shop\Common\Contract\ServiceDiscoveryInterface: '@Shop\Common\Service\ConsulServiceDiscovery'
     Shop\Common\Service\ConsulServiceDiscovery:
         arguments:
             $serviceHost: '%env(SERVICE_HOST)%'
@@ -20,7 +30,6 @@ services:
         autowire: true
         autoconfigure: true
         public: false
-    Shop\Common\Contract\ServiceDiscoveryInterface: '@Shop\Common\Service\ConsulServiceDiscovery'
 
     App\Command\ServiceDiscoveryRegisterCommand:
         tags: [ 'console.command' ]
