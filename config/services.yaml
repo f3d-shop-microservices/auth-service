@@ -11,8 +11,8 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    Shop\Common\Contract\HealthProviderInterface: '@Shop\Common\Service\HealthStatusProvider'
-    Shop\Common\Service\HealthStatusProvider:
+    Shop\Common\Health\HealthProviderInterface: '@Shop\Common\Health\HealthStatusProvider'
+    Shop\Common\Health\HealthStatusProvider:
         arguments:
             $serviceId: '%env(SERVICE_ID)%'
             $serviceHost: '%env(SERVICE_HOST)%'
@@ -20,8 +20,8 @@ services:
         autoconfigure: true
         public: false
 
-    Shop\Common\Contract\ServiceDiscoveryInterface: '@Shop\Common\Service\ConsulServiceDiscovery'
-    Shop\Common\Service\ConsulServiceDiscovery:
+    Shop\Common\ServiceDiscovery\ServiceDiscoveryInterface: '@Shop\Common\ServiceDiscovery\ConsulServiceDiscovery'
+    Shop\Common\ServiceDiscovery\ConsulServiceDiscovery:
         arguments:
             $serviceHost: '%env(SERVICE_HOST)%'
             $serviceName: '%env(SERVICE_ID)%'
@@ -33,10 +33,6 @@ services:
 
     App\Command\ServiceDiscoveryRegisterCommand:
         tags: [ 'console.command' ]
-
-    Shop\Common\Health\HealthStatusProvider:
-        autowire: true
-        autoconfigure: true
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

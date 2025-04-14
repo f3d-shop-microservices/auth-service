@@ -21,11 +21,9 @@ class UserController extends AbstractController
         EntityManagerInterface $em
     ): JsonResponse {
         $data = json_decode($request->getContent(), true);
-
         if (!isset($data['email'], $data['password'])) {
             return new JsonResponse(['error' => 'Email and password required'], 400);
         }
-
         $user = new User();
         $user->setEmail($data['email']);
         $user->setPassword($hasher->hashPassword($user, $data['password']));
@@ -33,7 +31,6 @@ class UserController extends AbstractController
 
         $em->persist($user);
         $em->flush();
-
         return new JsonResponse(['status' => 'User created'], 201);
     }
 

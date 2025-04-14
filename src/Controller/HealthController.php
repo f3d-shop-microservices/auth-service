@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use Shop\Common\Contract\HealthProviderInterface;
+use Shop\Common\Health\HealthProviderInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
