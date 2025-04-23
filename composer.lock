@@ -1224,15 +1224,22 @@
         {
             "name": "f3d/shop-common",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/f3d-shop-microservices/shop-common.git",
+                "reference": "1a4c10314762dbe31543b7efe9fd95e23762c4f7"
+            },
             "dist": {
-                "type": "path",
-                "url": "../../packages/shop-common",
-                "reference": "7e377ac2bcd6b366fa72538c6a865bafcea65e8c"
+                "type": "zip",
+                "url": "https://api.github.com/repos/f3d-shop-microservices/shop-common/zipball/1a4c10314762dbe31543b7efe9fd95e23762c4f7",
+                "reference": "1a4c10314762dbe31543b7efe9fd95e23762c4f7",
+                "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
                 "symfony/http-client": "^6.4"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1245,10 +1252,11 @@
                 }
             },
             "description": "Common tools for f3d shop microservices",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/f3d-shop-microservices/shop-common/tree/main",
+                "issues": "https://github.com/f3d-shop-microservices/shop-common/issues"
+            },
+            "time": "2025-04-15T09:49:26+00:00"
         },
         {
             "name": "lcobucci/clock",
