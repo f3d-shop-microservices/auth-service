@@ -1227,12 +1227,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/f3d-shop-microservices/shop-common.git",
-                "reference": "1a4c10314762dbe31543b7efe9fd95e23762c4f7"
+                "reference": "c09908361360c2b891a6692e1f4b58680e953ee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/f3d-shop-microservices/shop-common/zipball/1a4c10314762dbe31543b7efe9fd95e23762c4f7",
-                "reference": "1a4c10314762dbe31543b7efe9fd95e23762c4f7",
+                "url": "https://api.github.com/repos/f3d-shop-microservices/shop-common/zipball/c09908361360c2b891a6692e1f4b58680e953ee0",
+                "reference": "c09908361360c2b891a6692e1f4b58680e953ee0",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 "source": "https://github.com/f3d-shop-microservices/shop-common/tree/main",
                 "issues": "https://github.com/f3d-shop-microservices/shop-common/issues"
             },
-            "time": "2025-04-15T09:49:26+00:00"
+            "time": "2025-04-24T09:19:41+00:00"
         },
         {
             "name": "lcobucci/clock",
